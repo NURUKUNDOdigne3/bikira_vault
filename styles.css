@@ -216,7 +216,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 2;
 }
@@ -250,6 +250,78 @@ body {
     animation: slideInUp 0.8s ease 0.2s backwards;
 }
 
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn .btn-icon {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.download-btn .btn-text {
+    display: none;
+}
+
+.download-btn .btn-label {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.download-btn .btn-store {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.android-btn {
+    background: transparent;
+    color: #fff;
+    border-color: transparent;
+    padding: 0;
+}
+
+.android-btn:hover {
+    background: transparent;
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+.ios-btn {
+    background: transparent;
+    color: #fff;
+    border-color: transparent;
+    padding: 0;
+}
+
+.ios-btn:hover {
+    background: transparent;
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
 .trust-badges {
     display: flex;
     gap: 2rem;
@@ -275,8 +347,17 @@ body {
 
 .hero-image {
     position: relative;
-    height: 500px;
+    height: 400px;
+    max-width: 600px;
     animation: slideInRight 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(48, 164, 244, 0.2);
+    margin: 0 auto;
+    margin-top: -30px;
 }
 
 .floating-card {
