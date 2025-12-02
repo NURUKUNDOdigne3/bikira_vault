@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikira Vault - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-vault"></i>
+                <span>Bikira Vault</span>
+            </div>
+            <button class="sidebar-toggle mobile-only">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active">
+                    <a href="#dashboard" class="nav-link">
+                        <i class="fas fa-grid-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#users" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#documents" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#storage" class="nav-link">
+                        <i class="fas fa-database"></i>
+                        <span>Storage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#analytics" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#security" class="nav-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://via.placeholder.com/40" alt="Admin" class="profile-img">
+                <div class="profile-info">
+                    <p class="profile-name">John Admin</p>
+                    <p class="profile-role">Administrator</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle mobile-only">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="breadcrumb">
+                    <a href="#dashboard">Dashboard</a>
+                    <span class="separator">/</span>
+                    <span class="current-page">Overview</span>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="topbar-icons">
+                    <button class="icon-btn notification-btn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </button>
+
+                    <button class="icon-btn theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <div class="user-menu">
+                        <button class="icon-btn user-btn">
+                            <img src="https://via.placeholder.com/32" alt="User" class="user-avatar">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#">Profile</a>
+                            <a href="#">Preferences</a>
+                            <a href="#">Help</a>
+                            <hr>
+                            <a href="#" class="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome back, Bahizi! 👋</h1>
+                    <p>Here's what's happening with your platform today.</p>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-download"></i> Export Report
+                </button>
+            </section>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Total Users</h3>
+                        <i class="fas fa-users stat-icon"></i>
+                    </div>
+                    <div class="stat-value">2,543</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Total Documents</h3>
+                        <i class="fas fa-file-alt stat-icon"></i>
+                    </div>
+                    <div class="stat-value">12,847</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Storage Used</h3>
+                        <i class="fas fa-database stat-icon"></i>
+                    </div>
+                    <div class="stat-value">2.4 TB</div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i> 3% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Revenue</h3>
+                        <i class="fas fa-dollar-sign stat-icon"></i>
+                    </div>
+                    <div class="stat-value">$45,231</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 23% from last month
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Grid -->
+            <section class="dashboard-grid">
+                <!-- Chart Section -->
+                <div class="chart-card full-width">
+                    <div class="card-header">
+                        <h2>User Activity</h2>
+                        <div class="chart-controls">
+                            <button class="btn btn-small active">Week</button>
+                            <button class="btn btn-small">Month</button>
+                            <button class="btn btn-small">Year</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                        <div class="chart-placeholder">
+                            <p>📊 Chart visualization would display here</p>
+                            <small>Weekly user activity data</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Users -->
+                <div class="data-card">
+                    <div class="card-header">
+                        <h2>Recent Users</h2>
+                        <a href="#" class="view-all">View All →</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Join Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://via.placeholder.com/32" alt="User">
+                                        <span>Mugisha Said</span>
+                                    </div>
+                                </td>
+                                <td>sarah@example.com</td>
+                                <td><span class="badge-status active">Active</span></td>
+                                <td>Dec 01, 2024</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://via.placeholder.com/32" alt="User">
+                                        <span>Mike Johnson</span>
+                                    </div>
+                                </td>
+                                <td>mike@example.com</td>
+                                <td><span class="badge-status active">Active</span></td>
+                                <td>Nov 28, 2024</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://via.placeholder.com/32" alt="User">
+                                        <span>Emma Wilson</span>
+                                    </div>
+                                </td>
+                                <td>emma@example.com</td>
+                                <td><span class="badge-status inactive">Inactive</span></td>
+                                <td>Nov 15, 2024</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://via.placeholder.com/32" alt="User">
+                                        <span>David Brown</span>
+                                    </div>
+                                </td>
+                                <td>david@example.com</td>
+                                <td><span class="badge-status active">Active</span></td>
+                                <td>Nov 10, 2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Storage Overview -->
+                <div class="data-card">
+                    <div class="card-header">
+                        <h2>Storage Overview</h2>
+                    </div>
+                    <div class="storage-info">
+                        <div class="storage-item">
+                            <div class="storage-header">
+                                <span>Documents</span>
+                                <span class="storage-percent">45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%;"></div>
+                            </div>
+                            <p class="storage-detail">1.08 TB / 2.4 TB</p>
+                        </div>
+
+                        <div class="storage-item">
+                            <div class="storage-header">
+                                <span>Media Files</span>
+                                <span class="storage-percent">30%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 30%;"></div>
+                            </div>
+                            <p class="storage-detail">0.72 TB / 2.4 TB</p>
+                        </div>
+
+                        <div class="storage-item">
+                            <div class="storage-header">
+                                <span>Backups</span>
+                                <span class="storage-percent">20%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 20%;"></div>
+                            </div>
+                            <p class="storage-detail">0.48 TB / 2.4 TB</p>
+                        </div>
+
+                        <div class="storage-item">
+                            <div class="storage-header">
+                                <span>Other</span>
+                                <span class="storage-percent">5%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 5%;"></div>
+                            </div>
+                            <p class="storage-detail">0.12 TB / 2.4 TB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Status -->
+                <div class="data-card">
+                    <div class="card-header">
+                        <h2>System Status</h2>
+                    </div>
+                    <div class="status-list">
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <p class="status-name">API Server</p>
+                                <p class="status-text">All systems operational</p>
+                            </div>
+                            <span class="status-uptime">99.9%</span>
+                        </div>
+
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <p class="status-name">Database</p>
+                                <p class="status-text">All systems operational</p>
+                            </div>
+                            <span class="status-uptime">99.8%</span>
+                        </div>
+
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <p class="status-name">CDN</p>
+                                <p class="status-text">All systems operational</p>
+                            </div>
+                            <span class="status-uptime">99.95%</span>
+                        </div>
+
+                        <div class="status-item">
+                            <div class="status-indicator warning"></div>
+                            <div class="status-info">
+                                <p class="status-name">Backup Service</p>
+                                <p class="status-text">Running maintenance</p>
+                            </div>
+                            <span class="status-uptime">N/A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="data-card">
+                    <div class="card-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="actions-grid">
+                        <button class="action-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add User</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-mail-bulk"></i>
+                            <span>Send Email</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-redo"></i>
+                            <span>Refresh Data</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-file-download"></i>
+                            <span>Export Data</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-lock"></i>
+                            <span>Security Check</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-cogs"></i>
+                            <span>System Config</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Notifications Panel -->
+    <div class="notification-panel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-body">
+            <div class="notification-item unread">
+                <div class="notification-icon info">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">New user registered</p>
+                    <p class="notification-message">Sarah Anderson just joined the platform</p>
+                    <span class="notification-time">2 minutes ago</span>
+                </div>
+            </div>
+
+            <div class="notification-item unread">
+                <div class="notification-icon warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">High storage usage alert</p>
+                    <p class="notification-message">Storage usage is at 85% of total capacity</p>
+                    <span class="notification-time">15 minutes ago</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">Backup completed</p>
+                    <p class="notification-message">Daily backup has been successfully completed</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon info">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">System update available</p>
+                    <p class="notification-message">A new version is available for installation</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
