@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikira Vault - User Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-vault"></i>
+                <span>Bikira</span>
+            </div>
+            <button class="sidebar-toggle mobile-only">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active">
+                    <a href="#overview" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#files" class="nav-link">
+                        <i class="fas fa-folder"></i>
+                        <span>My Files</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#collections" class="nav-link">
+                        <i class="fas fa-image"></i>
+                        <span>Collections</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#shared" class="nav-link">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Shared</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#favorites" class="nav-link">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#activity" class="nav-link">
+                        <i class="fas fa-history"></i>
+                        <span>Activity</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#security" class="nav-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/50" alt="User" class="profile-img">
+                <div class="profile-info">
+                    <p class="profile-name">Sarah Anderson</p>
+                    <p class="profile-email">sarah@example.com</p>
+                </div>
+            </div>
+            <a href="#settings" class="sidebar-link">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="sidebar-link logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="topbar">
+            <button class="menu-toggle mobile-only">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search files, photos, documents...">
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <button class="icon-btn" title="Help">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <!-- User Header Card -->
+                <div class="user-header-card">
+                    <div class="header-content">
+                        <img src="https://via.placeholder.com/80" alt="User" class="header-avatar">
+                        <div class="header-info">
+                            <h1>Welcome back, Sarah! 👋</h1>
+                            <p class="last-activity">Last activity: Uploaded 2 photos 5 mins ago</p>
+                        </div>
+                    </div>
+                    <div class="sync-status">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>All Files Synced</span>
+                    </div>
+                </div>
+
+                <!-- Storage Overview -->
+                <div class="storage-card">
+                    <div class="storage-header">
+                        <h3>Storage</h3>
+                        <span class="storage-text">3.2 GB of 15 GB</span>
+                    </div>
+                    <div class="storage-bar">
+                        <div class="storage-used" style="width: 21.3%"></div>
+                    </div>
+                    <div class="storage-breakdown">
+                        <div class="storage-item">
+                            <span class="storage-label">Photos</span>
+                            <span class="storage-value">1.5 GB</span>
+                        </div>
+                        <div class="storage-item">
+                            <span class="storage-label">Documents</span>
+                            <span class="storage-value">0.8 GB</span>
+                        </div>
+                        <div class="storage-item">
+                            <span class="storage-label">Videos</span>
+                            <span class="storage-value">0.9 GB</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                        <i class="fas fa-arrow-up"></i> Upgrade Storage
+                    </button>
+                </div>
+
+                <!-- Quick Actions Grid -->
+                <div class="quick-actions-grid">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Upload Files</h3>
+                        <p>Add documents and files</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h3>Upload Photos</h3>
+                        <p>Add your memories</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <h3>Upload Folder</h3>
+                        <p>Bulk upload files</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <h3>Cloud Backup</h3>
+                        <p>Auto-sync enabled</p>
+                    </div>
+                </div>
+
+                <!-- Smart Collections -->
+                <div class="collections-section">
+                    <h2>Smart Collections</h2>
+                    <div class="collections-grid">
+                        <div class="collection-card">
+                            <div class="collection-icon memories">
+                                <i class="fas fa-photo-video"></i>
+                            </div>
+                            <h3>Memories</h3>
+                            <p>242 items</p>
+                            <span class="collection-date">This Year</span>
+                        </div>
+                        <div class="collection-card">
+                            <div class="collection-icon screenshots">
+                                <i class="fas fa-window-restore"></i>
+                            </div>
+                            <h3>Screenshots</h3>
+                            <p>48 items</p>
+                        </div>
+                        <div class="collection-card">
+                            <div class="collection-icon documents">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3>Documents</h3>
+                            <p>156 items</p>
+                        </div>
+                        <div class="collection-card">
+                            <div class="collection-icon large">
+                                <i class="fas fa-archive"></i>
+                            </div>
+                            <h3>Large Files</h3>
+                            <p>12 items</p>
+                            <span class="collection-date">Over 100 MB</span>
+                        </div>
+                        <div class="collection-card">
+                            <div class="collection-icon trash">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                            <h3>Deleted</h3>
+                            <p>5 items</p>
+                            <span class="collection-date">Delete in 30 days</span>
+                        </div>
+                        <div class="collection-card">
+                            <div class="collection-icon recent">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Recently Added</h3>
+                            <p>18 items</p>
+                            <span class="collection-date">Last 7 days</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Files Section -->
+            <section id="files" class="section">
+                <div class="section-header">
+                    <h2>My Files</h2>
+                    <div class="file-controls">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-plus"></i> New Folder
+                        </button>
+                        <button class="view-toggle active" title="Grid view">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-toggle" title="List view">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- File Categories -->
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All Files</button>
+                    <button class="category-tab" data-category="photos">Photos</button>
+                    <button class="category-tab" data-category="documents">Documents</button>
+                    <button class="category-tab" data-category="videos">Videos</button>
+                    <button class="category-tab" data-category="audio">Audio</button>
+                </div>
+
+                <!-- File Grid -->
+                <div class="files-grid">
+                    <div class="file-item">
+                        <div class="file-thumbnail">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4>Vacation Photos.zip</h4>
+                            <p>2.4 MB • 2 days ago</p>
+                        </div>
+                        <button class="file-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-thumbnail">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4>Resume.pdf</h4>
+                            <p>1.2 MB • 1 week ago</p>
+                        </div>
+                        <button class="file-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-thumbnail">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4>Birthday Party.mp4</h4>
+                            <p>456 MB • 3 weeks ago</p>
+                        </div>
+                        <button class="file-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-thumbnail">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4>Playlist.m3u</h4>
+                            <p>128 KB • 1 month ago</p>
+                        </div>
+                        <button class="file-menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collections Section -->
+            <section id="collections" class="section">
+                <h2>Collections</h2>
+                <div class="collections-detailed">
+                    <div class="collection-item">
+                        <div class="collection-header">
+                            <h3>Summer 2024</h3>
+                            <span class="item-count">145 photos</span>
+                        </div>
+                        <p>Beautiful moments from summer vacation</p>
+                        <a href="#" class="view-link">View →</a>
+                    </div>
+                    <div class="collection-item">
+                        <div class="collection-header">
+                            <h3>Work Projects</h3>
+                            <span class="item-count">89 files</span>
+                        </div>
+                        <p>All important work documents and presentations</p>
+                        <a href="#" class="view-link">View →</a>
+                    </div>
+                    <div class="collection-item">
+                        <div class="collection-header">
+                            <h3>Family Photos</h3>
+                            <span class="item-count">312 photos</span>
+                        </div>
+                        <p>Moments with family and loved ones</p>
+                        <a href="#" class="view-link">View →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shared Section -->
+            <section id="shared" class="section">
+                <h2>Shared Files & Folders</h2>
+                <div class="shared-items">
+                    <div class="shared-item">
+                        <div class="shared-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="shared-details">
+                            <h3>Family Album Link</h3>
+                            <p>Shared with 5 people • Expires in 25 days</p>
+                            <div class="share-tags">
+                                <span class="tag">Link Shared</span>
+                                <span class="tag warning">Expires Soon</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-small">Manage</button>
+                    </div>
+
+                    <div class="shared-item">
+                        <div class="shared-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="shared-details">
+                            <h3>Project Files - Password Protected</h3>
+                            <p>Shared with 3 people • Password enabled</p>
+                            <div class="share-tags">
+                                <span class="tag">Secured</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-small">Manage</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="section">
+                <h2>Favorites ⭐</h2>
+                <div class="favorites-grid">
+                    <div class="favorite-item">
+                        <div class="item-icon folder">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <h4>Important Documents</h4>
+                        <p>24 items</p>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="item-icon file">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>2024 Budget.xlsx</h4>
+                        <p>285 KB</p>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="item-icon photo">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h4>Profile Picture</h4>
+                        <p>2.1 MB</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Section -->
+            <section id="activity" class="section">
+                <h2>Activity Log</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Uploaded 2 photos</h4>
+                            <p>Vacation_001.jpg, Vacation_002.jpg</p>
+                            <span class="activity-time">5 minutes ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon delete">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Deleted old backup</h4>
+                            <p>backup_2023.zip</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon share">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Created shared link</h4>
+                            <p>Family Album (5 people)</p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon download">
+                            <i class="fas fa-cloud-download-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Downloaded files</h4>
+                            <p>Project_files.zip</p>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon security">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Security alert</h4>
+                            <p>New login from Chrome on Windows</p>
+                            <span class="activity-time">5 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="security" class="section">
+                <h2>Security & Privacy</h2>
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3>Two-Factor Authentication</h3>
+                        <p>Add an extra layer of security to your account</p>
+                        <button class="btn btn-secondary">Enable 2FA</button>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3>Biometric Lock</h3>
+                        <p>Use Face ID or Fingerprint to unlock</p>
+                        <button class="btn btn-secondary">Configure</button>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Private Space</h3>
+                        <p>Extra secure folder with additional protection</p>
+                        <button class="btn btn-secondary">Create</button>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-lock-open"></i>
+                        </div>
+                        <h3>Encrypted Backup</h3>
+                        <p>End-to-end encryption for all backups</p>
+                        <div class="toggle">
+                            <input type="checkbox" id="backup-toggle" checked>
+                            <label for="backup-toggle"></label>
+                        </div>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-smartphone"></i>
+                        </div>
+                        <h3>Mobile Sync</h3>
+                        <p>Sync photos and documents from mobile</p>
+                        <button class="btn btn-secondary">Manage Devices</button>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Login History</h3>
+                        <p>View all login attempts and sessions</p>
+                        <button class="btn btn-secondary">View Log</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>Appearance</h3>
+                    <div class="setting-item">
+                        <label>Theme</label>
+                        <select>
+                            <option>Light (Default)</option>
+                            <option>Dark</option>
+                            <option>Auto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Preferences</h3>
+                    <div class="setting-item">
+                        <label>Language</label>
+                        <select>
+                            <option>English</option>
+                            <option>French</option>
+                            <option>Spanish</option>
+                            <option>Kinyarwanda</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Account</h3>
+                    <button class="btn btn-secondary btn-block">
+                        <i class="fas fa-info-circle"></i> Account Information
+                    </button>
+                    <button class="btn btn-secondary btn-block">
+                        <i class="fas fa-headset"></i> Contact Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
