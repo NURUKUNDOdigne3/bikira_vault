@@ -79,60 +79,6 @@ if (userBtn && dropdownMenu) {
     });
 }
 
-// ===== THEME TOGGLE =====
-const themeToggle = document.querySelector('.theme-toggle');
-const htmlElement = document.documentElement;
-
-// Check for saved theme preference or default to dark theme
-const currentTheme = localStorage.getItem('theme') || 'dark';
-
-if (currentTheme === 'light') {
-    htmlElement.style.setProperty('--bg-primary', '#f5f5f5');
-    htmlElement.style.setProperty('--bg-secondary', '#ffffff');
-    htmlElement.style.setProperty('--bg-tertiary', '#f9f9f9');
-    htmlElement.style.setProperty('--bg-light', '#f0f0f0');
-    htmlElement.style.setProperty('--text-primary', '#1a1a1a');
-    htmlElement.style.setProperty('--text-secondary', '#555555');
-    htmlElement.style.setProperty('--text-tertiary', '#999999');
-    htmlElement.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.1)');
-    htmlElement.style.setProperty('--border-light', 'rgba(0, 0, 0, 0.05)');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-}
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isLight = currentTheme === 'light';
-
-        if (isLight) {
-            // Switch to dark theme
-            htmlElement.style.setProperty('--bg-primary', '#0f0f1e');
-            htmlElement.style.setProperty('--bg-secondary', '#1a1a2e');
-            htmlElement.style.setProperty('--bg-tertiary', '#16213e');
-            htmlElement.style.setProperty('--bg-light', '#0d0d1a');
-            htmlElement.style.setProperty('--text-primary', '#ffffff');
-            htmlElement.style.setProperty('--text-secondary', '#b0b0c0');
-            htmlElement.style.setProperty('--text-tertiary', '#808090');
-            htmlElement.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.1)');
-            htmlElement.style.setProperty('--border-light', 'rgba(255, 255, 255, 0.05)');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            // Switch to light theme
-            htmlElement.style.setProperty('--bg-primary', '#f5f5f5');
-            htmlElement.style.setProperty('--bg-secondary', '#ffffff');
-            htmlElement.style.setProperty('--bg-tertiary', '#f9f9f9');
-            htmlElement.style.setProperty('--bg-light', '#f0f0f0');
-            htmlElement.style.setProperty('--text-primary', '#1a1a1a');
-            htmlElement.style.setProperty('--text-secondary', '#555555');
-            htmlElement.style.setProperty('--text-tertiary', '#999999');
-            htmlElement.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.1)');
-            htmlElement.style.setProperty('--border-light', 'rgba(0, 0, 0, 0.05)');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', 'light');
-        }
-    });
-}
-
 // ===== SEARCH FUNCTIONALITY =====
 const searchInput = document.querySelector('.search-bar input');
 if (searchInput) {
@@ -328,15 +274,6 @@ document.addEventListener('keydown', (e) => {
         sidebar.classList.remove('active');
     }
 });
-
-// ===== NOTIFICATION BADGE UPDATE =====
-function updateNotificationBadge(count) {
-    const badge = document.querySelector('.notification-btn .badge');
-    if (badge) {
-        badge.textContent = count;
-        badge.style.animation = 'pulse 0.3s ease-out';
-    }
-}
 
 // ===== INITIAL ANIMATIONS =====
 window.addEventListener('load', () => {
