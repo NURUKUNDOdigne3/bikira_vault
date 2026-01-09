@@ -10,7 +10,7 @@ navLinks.forEach(link => {
         
         // Remove active class from all items
         document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.remove('active');
+            item.classList.remove('a ctive');
         });
         
         // Add active class to clicked item
@@ -197,7 +197,7 @@ if (logoutLink) {
     });
 }
 
-// ===== FAVORITE ITEMS =====
+
 const favoriteItems = document.querySelectorAll('.favorite-item');
 favoriteItems.forEach(item => {
     item.addEventListener('click', () => {
